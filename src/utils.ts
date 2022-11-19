@@ -3,12 +3,11 @@ export const getRotationDegrees = (
   numberOfPrizes: number
 ) => {
   const degreesPerPrize = 360 / numberOfPrizes;
-
-  const prizeRotation = degreesPerPrize * (numberOfPrizes - prizeNumber);
-
-  return numberOfPrizes - prizeNumber > numberOfPrizes / 2
-    ? -360 + prizeRotation
-    : prizeRotation;
+  const prizeRotation = degreesPerPrize * (prizeNumber);
+  return 360 - prizeRotation
+  // return numberOfPrizes - prizeNumber > numberOfPrizes / 2
+  //   ? -360 + prizeRotation
+  //   : prizeRotation;
 };
 
 export const getRandomInt = (min: any, max: any) => {

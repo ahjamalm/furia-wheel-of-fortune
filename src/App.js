@@ -1,11 +1,16 @@
 import "./styles.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Wheel } from "./components/Roulette";
 import Grow from "@mui/material/Grow";
 import { makeStyles, Modal } from "@material-ui/core";
-import { getRandomInt } from "./utils";
 import BGPrize from "./assets/bg_prize.png";
 import PrizeFrame from "./assets/prize_frame.gif";
+import { useDispatch, useSelector } from "react-redux";
+import { SetLogRecord } from "./reducers/logs";
+import { GetNextPrize, mockData } from "./helpers";
+import LongMenu from "./components/menu";
+import moment from "moment-timezone";
+moment.tz.setDefault('Asia/Riyadh');
 
 const useStyles = makeStyles(() => ({
   modal: {
@@ -28,7 +33,7 @@ const useStyles = makeStyles(() => ({
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
-    fontSize: "10vw",
+    fontSize: "6vw",
     textAlign: "center",
     color: "white",
     height: "100%",
@@ -40,7 +45,7 @@ const useStyles = makeStyles(() => ({
     width: "47%",
     height: "47vw",
     position: "absolute",
-    top: "10%",
+    top: "18%",
     left: "26%",
   },
   prize: {
@@ -55,54 +60,43 @@ const useStyles = makeStyles(() => ({
 
 export default function App() {
   const classes = useStyles();
+  const records = useSelector(state => state.log?.records?.[moment().format('DD/MM/yyyy')]);
+  console.log("recordsrecords", records);
   const [couponNum, setCouponNum] = useState(1);
   const [mustSpin, setMustSpin] = useState(false);
   const [open, setOpen] = useState(false);
   const [spinning, setSpinning] = useState(false);
-
+  const dispatch = useDispatch()
   const handleOpen = () => {
     setOpen(true);
   };
 
   const handleClose = () => {
     setOpen(false);
-  };
-
-  const mockData = {
-    1: "$50 GIFT CARD",
-    2: "NICE TRY!",
-    3: "SCARF",
-    4: "SCARF",
-    5: "SCARF",
-    6: "SCARF",
-    7: "SCARF",
-    8: "NICE TRY!",
-    9: "SCARF",
-    10: "NICE TRY!",
-    11: "SCARF",
-    12: "SCARF",
-    13: "SCARF",
-    14: "NICE TRY!",
-    15: "SCARF",
-    16: "NICE TRY!",
-    17: "SCARF",
-    18: "SCARF",
-    19: "SCARF",
-    20: "SCARF",
+    window.location.reload()
   };
 
   const onClick = () => {
     if (!spinning) {
       setSpinning(true);
-      const newCouponNum = getRandomInt(1, 20);
+      // const newCouponNum = 1;
+      const newCouponNum = GetNextPrize(records);
       setCouponNum(newCouponNum);
+      dispatch(SetLogRecord(newCouponNum))
       console.log(newCouponNum);
       setMustSpin(true);
     }
   };
 
+  // useEffect(() => {
+  //   dispatch(ResetLog())
+  // }, [])
   return (
     <div className="App">
+      <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '16px' }}>
+        <LongMenu />
+      </div>
+
       <div className={classes.wheelContainer}>
         <Wheel
           mustStartSpinning={mustSpin}
@@ -124,7 +118,7 @@ export default function App() {
         <Grow in={open}>
           <div className={classes.paper}>
             <div className={classes.paper2}>
-              <p className={classes.prize}>{mockData[couponNum]}</p>
+              <p className={classes.prize}>{mockData[couponNum - 1].name}</p>
             </div>
           </div>
         </Grow>

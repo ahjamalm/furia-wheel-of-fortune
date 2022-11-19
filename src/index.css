@@ -1,14 +1,14 @@
 @font-face {
-  font-family: "Rb2.1B";
+  font-family: "Rb2.1b";
   src: local("Rb2.1b"),
-    url("./fonts/rene_bieder_-_rbno2.1b-black-webfont.woff2") format("woff2");
+    url("./fonts/Weber-Serif-Bold.ttf") format("woff");
   font-weight: bold;
 }
 
 body,
 html {
   width: 100vw;
-  font-family: "Rb2.1b";
+  font-family: "Rb2.1b" !important;
   overflow: hidden;
 
   /* The image used */
@@ -19,4 +19,21 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+
+p {
+  font-family: "Rb2.1b" !important;
+}
+
+button {
+  font-family: "Rb2.1b" !important;
+}
+
+h5 {
+  font-family: "Rb2.1b" !important;
+}
+
+table {
+  font-family: "Rb2.1b" !important;
+
 }

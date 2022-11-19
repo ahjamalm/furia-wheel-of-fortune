@@ -37,12 +37,13 @@ export const Wheel = ({
   useEffect(() => {
     if (mustStartSpinning && !isCurrentlySpinning) {
       setIsCurrentlySpinning(true);
-      startSpinning();
       const finalRotationDegreesCalculated = getRotationDegrees(
         prizeNumber,
-        20
+        10
       );
       setFinalRotationDegrees(finalRotationDegreesCalculated);
+      startSpinning();
+
     }
   }, [mustStartSpinning]);
 
