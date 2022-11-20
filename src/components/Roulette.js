@@ -87,10 +87,10 @@ export const Wheel = ({
         alt="marker"
         style={{
           position: "relative",
-          width: "13%",
-          filter: "drop-shadow(-10px 30px 5px #000000CC)",
+          width: "14%",
+          filter: "drop-shadow(-5px 20px 6px #000000CC)",
           left: "11%",
-          top: "-15.5%",
+          top: "-13.5%",
           zIndex: 2,
         }}
       />
@@ -103,8 +103,8 @@ export const Wheel = ({
           position: "relative",
           width: "22%",
           height: "22%",
-          left: "-6.5%",
-          top: "39%",
+          left: "-7%",
+          top: "38.5%",
           margin: "0 auto",
           filter: "drop-shadow(-10px 30px 5px #000000CC)",
           zIndex: 3,

@@ -99,7 +99,7 @@ export default function App() {
   // }, [])
   return (
     <div className="App">
-      <div style={{ display: 'flex', justifyContent: 'space-between', padding: '16px' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', padding: '16px' ,backgroundColor:'#d4c8c8'}}>
         <div style={{
           backgroundImage: `url(${Logo})`,
           backgroundSize: 'cover',
