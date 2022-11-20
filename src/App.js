@@ -1,9 +1,11 @@
 import "./styles.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Wheel } from "./components/Roulette";
 import Grow from "@mui/material/Grow";
 import { makeStyles, Modal } from "@material-ui/core";
 import BGPrize from "./assets/bg_prize.png";
+import Logo from "./assets/Logo5x.png";
+
 import PrizeFrame from "./assets/prize_frame.gif";
 import { useDispatch, useSelector } from "react-redux";
 import { SetLogRecord } from "./reducers/logs";
@@ -42,10 +44,10 @@ const useStyles = makeStyles(() => ({
     position: "absolute",
   },
   wheelContainer: {
-    width: "47%",
+    width: "47vw",
     height: "47vw",
     position: "absolute",
-    top: "18%",
+    top: "calc(50% - 23vw)",
     left: "26%",
   },
   prize: {
@@ -61,9 +63,10 @@ const useStyles = makeStyles(() => ({
 export default function App() {
   const classes = useStyles();
   const records = useSelector(state => state.log?.records?.[moment().format('DD/MM/yyyy')]);
-  console.log("recordsrecords", records);
   const [couponNum, setCouponNum] = useState(1);
   const [mustSpin, setMustSpin] = useState(false);
+  const [counter, setCounter] = useState(0);
+
   const [open, setOpen] = useState(false);
   const [spinning, setSpinning] = useState(false);
   const dispatch = useDispatch()
@@ -73,7 +76,10 @@ export default function App() {
 
   const handleClose = () => {
     setOpen(false);
-    window.location.reload()
+    if (counter > 5) {
+      window.location.reload()
+    }
+    setCounter(counter + 1)
   };
 
   const onClick = () => {
@@ -93,7 +99,13 @@ export default function App() {
   // }, [])
   return (
     <div className="App">
-      <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '16px' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', padding: '16px' }}>
+        <div style={{
+          backgroundImage: `url(${Logo})`,
+          backgroundSize: 'cover',
+          width: '200px',
+          aspectRatio:'2.32',
+        }} ></div>
         <LongMenu />
       </div>
 

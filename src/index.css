@@ -7,13 +7,13 @@
 
 body,
 html {
-  width: 100vw;
+  /* width: 100vw; */
   font-family: "Rb2.1b" !important;
   overflow: hidden;
 
   /* The image used */
-  background-image: url("./assets/bg.gif");
-
+  /* background-image: url("./assets/bg.gif"); */
+background-color: #000;
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;

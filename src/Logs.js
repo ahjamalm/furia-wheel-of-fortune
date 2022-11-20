@@ -33,7 +33,6 @@ const Logs = () => {
                 {
                     records ? Object.keys(records).map((key, index) => {
                         let rec = records[key]
-                        console.log("recrecrecrec",rec);
                         return <div key={index}>
                             <Accordion>
                                 <AccordionSummary

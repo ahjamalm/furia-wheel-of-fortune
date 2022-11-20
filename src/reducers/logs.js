@@ -18,9 +18,7 @@ const initial = {
 let ex = (state = initial, action) => {
     switch (action.type) {
         case SET_LOG:
-            console.log("state?.records",state?.records);
             let date = moment().format('DD/MM/yyyy')
-            console.log("datedate", date);
             let dateRecord = state?.records?.[date] || []
             return { ...state, records: { ...state.records, [date]: [...dateRecord, action.payload] } }
         case RESET_LOG:
