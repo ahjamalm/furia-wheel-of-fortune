@@ -56,9 +56,16 @@ table {
   filter: "drop-shadow(-4px 12px 12px #00000040)";
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 1000px) {
   .bannar {
     scale: 0.6;
+  }
+  .wheelContainer {
+    scale: 0.8;
+    top: calc(100vh - 47vw) !important
+  }
+  .wheelPodium {
+    scale: 0.9;
   }
 }
 

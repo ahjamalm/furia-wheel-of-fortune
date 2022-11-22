@@ -153,7 +153,7 @@ export default function App() {
           backgroundRepeat: "no-repeat",
           backgroundSize: 'cover',
           width: '65vw',
-          height: '160px',
+          height: '35vh',
         }} ></div>
       </div>
 
