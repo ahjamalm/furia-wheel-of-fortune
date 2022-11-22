@@ -54,28 +54,80 @@ table {
   background-image: url('./assets/Podium.png');
   z-index: -10;
   filter: "drop-shadow(-4px 12px 12px #00000040)";
+  scale:1
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-height: 100px) {
+  .bannar {
+    scale: 0.4;
+    top: calc(50% - 26vw) !important
+  }
+  .wheelContainer {
+    scale: 0.65;
+    top: calc(100vh - 44vw) !important
+  }
+  .wheelPodium {
+    scale: 1;
+  }
+}
+
+@media only screen and (min-height: 500px) {
   .bannar {
     scale: 0.6;
+    top: calc(50% - 34vw) !important
+
   }
   .wheelContainer {
-    scale: 0.8;
-    top: calc(100vh - 47vw) !important
+    scale: 0.9;
+    top: calc(100vh - 50vw) !important
   }
   .wheelPodium {
     scale: 0.9;
   }
 }
+@media only screen and (min-height: 1000px) and (min-width:750px) {
+  .bannar {
+    scale: 1;
+    top: calc(50% - 38vw) !important
 
-@media only screen and (max-height: 500px) {
+  }
+  .wheelContainer {
+    scale: 1.2;
+    top: calc(100vh - 57vw) !important
+  }
+  .wheelPodium {
+    scale: 1;
+  }
+
+}
+
+@media only screen and (min-height: 750px) and (min-width:1000px) {
+  .bannar {
+    scale: 0.7;
+    top: calc(50% - 38vw) !important
+
+  }
+  .wheelContainer {
+    scale: 1;
+    top: calc(100vh - 52vw) !important
+  }
+  .wheelPodium {
+    scale: 1;
+  }
+}
+
+@media only screen and (min-height: 1000px) and (min-width:900px) {
+  .bannar {
+    scale: 0.7;
+    top: calc(50% - 33vw) !important
+
+  }
   .wheelContainer {
     scale: 0.8;
-    top: calc(100vh - 47vw) !important
+    top: calc(100vh - 49vw) !important
   }
 
   .wheelPodium {
-    scale: 0.9;
+    scale: 1;
   }
 }

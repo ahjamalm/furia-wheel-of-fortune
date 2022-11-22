@@ -64,20 +64,7 @@ const useStyles = makeStyles(() => ({
     // left: "50%",
     // transform: "translate(-50%, -50%)",
     textShadow: "1px 1px 10px #ffffffcc, 1px 1px 10px #ccc",
-  },
-  wheelPodium: {
-    width: "100vw",
-    height: "30vw",
-    position: "absolute",
-    top: "calc(100vh - 23vw)",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: 'contain',
-    backgroundImage: `url(${Podium})`,
-    zIndex: -10,
-    filter: "drop-shadow(-4px 12px 12px #00000040)",
-
-  },
+  }
 }));
 
 export default function App() {
