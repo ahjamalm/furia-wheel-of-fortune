@@ -93,7 +93,7 @@ table {
 @media only screen and (min-height: 750px) and (min-width:1000px) {
   .bannar {
     scale: 0.7;
-    top: calc(50% - 32vw) !important
+    top: calc(50% - 35vw) !important
 
   }
   .wheelContainer {
@@ -124,7 +124,7 @@ table {
 @media only screen and (min-height: 1000px) and (min-width:750px) {
   .bannar {
     scale: 0.7;
-    top: calc(50% - 32vw) !important
+    top: calc(50% - 35vw) !important
 
   }
   .wheelContainer {
