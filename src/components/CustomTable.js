@@ -37,7 +37,7 @@ export default function BasicTable({ dateKey }) {
           <TableRow>
             <TableCell>Item </TableCell>
             <TableCell align="right">Redeemed</TableCell>
-            <TableCell align="right">Remained</TableCell>
+            {/* <TableCell align="right">Remained</TableCell> */}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -50,7 +50,7 @@ export default function BasicTable({ dateKey }) {
                 {row.name}
               </TableCell>
               <TableCell align="right">{row.redeemed}</TableCell>
-              <TableCell align="right">{row.remain}</TableCell>
+              {/* <TableCell align="right">{row.remain}</TableCell> */}
             </TableRow>
           ))}
         </TableBody>

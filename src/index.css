@@ -7,18 +7,15 @@
 
 body,
 html {
-  /* width: 100vw; */
   font-family: "Rb2.1b" !important;
   overflow: hidden;
-
-  /* The image used */
+  height: 100%;
   /* background-image: url("./assets/bg.gif"); */
-  background-image: linear-gradient(#cacaca, #ed1c2350);
-  /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  margin: 0;
 }
 
 p {

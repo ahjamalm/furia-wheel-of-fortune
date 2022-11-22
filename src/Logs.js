@@ -60,6 +60,7 @@ const Logs = () => {
 
                                             {
                                                 rec?.map((item, innerIndex) => {
+                                                    console.log("itemitem",item);
                                                     return <div key={innerIndex}>
                                                         <Typography> {innerIndex + 1}- {mockData[item - 1].name}</Typography>
                                                     </div>
