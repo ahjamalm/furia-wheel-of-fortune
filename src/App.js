@@ -1,17 +1,14 @@
 import "./styles.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Wheel } from "./components/Roulette";
 import Grow from "@mui/material/Grow";
-import Zoom from '@mui/material/Zoom';
-
-import { Avatar, makeStyles, Modal } from "@material-ui/core";
+import { makeStyles, Modal } from "@material-ui/core";
 import BGPrize from "./assets/bg_prize.png";
 import Logo from "./assets/Logo5x.png";
 import TextLogo from "./assets/text.png";
 
 import Podium from "./assets/Podium.png";
 import PrizeFrame from "./assets/prize_frame.gif";
-import prizeTriange from "./assets/prizeTriange.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { SetLogRecord } from "./reducers/logs";
 import { GetNextPrizeIndex, mockData } from "./helpers";
@@ -59,13 +56,6 @@ const useStyles = makeStyles(() => ({
     outline: "none",
     display: 'flex',
     alignItems: 'center'
-  },
-  wheelContainer: {
-    width: "40vw",
-    height: "40vw",
-    position: "absolute",
-    top: "calc(100vh - 52vw)",
-    left: "30%",
   },
   prize: {
     margin: 0,
@@ -150,7 +140,7 @@ export default function App() {
         />
 
       </div>
-      <div style={{
+      <div className="bannar" style={{
         display: 'flex',
         justifyContent: 'center',
         position: "absolute",
@@ -167,7 +157,7 @@ export default function App() {
         }} ></div>
       </div>
 
-      <div className={classes.wheelContainer}>
+      <div className='wheelContainer'>
         <Wheel
           mustStartSpinning={mustSpin}
           prizeNumber={couponNum}
@@ -219,8 +209,8 @@ export default function App() {
             <div className={classes.paper0}>
               <div className={classes.paper}>
                 <div className={classes.paper2}>
-                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '65%' }}>
-                    <p className={classes.prize}>{"No prizes left for today"}</p>
+                  <div style={{ display: 'flex', justifyContent: 'center', textAlign: 'center', alignItems: 'center', width: '65%' }}>
+                    <p className={classes.prize}>{"Thanks for your participation, Join us later for the next activation"}</p>
                   </div>
                 </div>
               </div>
@@ -231,7 +221,7 @@ export default function App() {
       }
 
 
-      <div className={classes.wheelPodium} />
+      <div className="wheelPodium" />
 
     </div>
   );
