@@ -221,7 +221,7 @@ export default function App() {
 
 
       <div className="wheelPodium" />
-      <div style={{ position: 'absolute', bottom: '80px', right: '20px', fontSize: '40px', fontWeight: 700, color: '#ed1c23', border: '6px solid #ed1c23', borderRadius: '8px', padding: '8px 40px' }}>{records?.length}</div>
+      <div style={{ position: 'absolute', bottom: '80px', right: '20px', fontSize: '40px', fontWeight: 700, color: '#ed1c23', border: '6px solid #ed1c23', borderRadius: '8px', padding: '8px 40px' }}>{records?.length || 0}</div>
 
     </div>
   );
