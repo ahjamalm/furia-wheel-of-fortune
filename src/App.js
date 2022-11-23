@@ -1,20 +1,21 @@
 import "./styles.css";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Wheel } from "./components/Roulette";
 import Grow from "@mui/material/Grow";
 import { makeStyles, Modal } from "@material-ui/core";
 import BGPrize from "./assets/bg_prize.png";
 import Logo from "./assets/Logo5x.png";
 import TextLogo from "./assets/text.png";
-
-import Podium from "./assets/Podium.png";
 import PrizeFrame from "./assets/prize_frame.gif";
 import { useDispatch, useSelector } from "react-redux";
 import { SetLogRecord } from "./reducers/logs";
 import { GetNextPrizeIndex, mockData } from "./helpers";
 import LongMenu from "./components/menu";
 import moment from "moment-timezone";
+import audioFile from '../src/assets/sound.wav'
+
 moment.tz.setDefault('Asia/Riyadh');
+const beep = new Audio(audioFile)
 
 const useStyles = makeStyles(() => ({
   modal: {
@@ -75,6 +76,8 @@ export default function App() {
   const [counter, setCounter] = useState(0);
   const [open, setOpen] = useState(false);
   const [endOfSpins, setEndOfSpins] = useState(false);
+  const [soundPlayed, setSoundPlayed] = useState(false);
+  const ref = useRef()
   const [spinning, setSpinning] = useState(false);
   const dispatch = useDispatch()
   const handleOpen = () => {
@@ -106,12 +109,20 @@ export default function App() {
 
     }
   };
-
-  // useEffect(() => {
-  //   dispatch(ResetLog())
-  // }, [])
+  function musicPlay() {
+    beep.loop = true;
+    beep.play().then(() => {
+      setSoundPlayed(true)
+    })
+    document.removeEventListener('click', musicPlay);
+  }
+  useEffect(() => {
+    document.addEventListener('click', musicPlay);
+  }, [])
   return (
-    <div className="App">
+    <div ref={ref} className="App">
+
+
       <div className="background" >
         {/* <iframe src="https://giphy.com/embed/VQ7BcoWeTichjgUBdv" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/isaidyes-shesaidyes-thewhiteflowerbridalboutique-VQ7BcoWeTichjgUBdv">via GIPHY</a></p> */}
       </div>
@@ -161,6 +172,7 @@ export default function App() {
         open={open}
         onClose={handleClose}
         className={classes.modal}
+        onClick={handleClose}
       >
         <Grow in={open}>
           <div className={classes.paper0}>
@@ -209,6 +221,7 @@ export default function App() {
 
 
       <div className="wheelPodium" />
+      <div style={{ position: 'absolute', bottom: '80px', right: '20px', fontSize: '40px', fontWeight: 700, color: '#ed1c23', border: '6px solid #ed1c23', borderRadius: '8px', padding: '8px 40px' }}>{records?.length}</div>
 
     </div>
   );
