@@ -36,7 +36,7 @@ export const RotationContainer = styled.div<Roulette>`
       transform: rotate(${(props) => props.startRotationDegrees}deg);
     }
     to {
-      transform: rotate(${(props) => props.startRotationDegrees + 360}deg);
+      transform: rotate(${(props) => props.startRotationDegrees + 1440}deg);
     }
   }
   @keyframes continueSpin {
@@ -44,7 +44,7 @@ export const RotationContainer = styled.div<Roulette>`
       transform: rotate(${(props) => props.startRotationDegrees}deg);
     }
     to {
-      transform: rotate(${(props) => props.startRotationDegrees + 360}deg);
+      transform: rotate(${(props) => props.startRotationDegrees + 1440}deg);
     }
   }
   @keyframes stopSpin {

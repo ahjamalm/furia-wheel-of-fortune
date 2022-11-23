@@ -76,7 +76,6 @@ export default function App() {
   const [counter, setCounter] = useState(0);
   const [open, setOpen] = useState(false);
   const [endOfSpins, setEndOfSpins] = useState(false);
-  const [soundPlayed, setSoundPlayed] = useState(false);
   const ref = useRef()
   const [spinning, setSpinning] = useState(false);
   const dispatch = useDispatch()
@@ -87,7 +86,7 @@ export default function App() {
     setOpen(false);
     setEndOfSpins(false)
     if (counter > 5) {
-      window.location.reload()
+      // window.location.reload()
     }
     setCounter(counter + 1)
   };
@@ -111,9 +110,7 @@ export default function App() {
   };
   function musicPlay() {
     beep.loop = true;
-    beep.play().then(() => {
-      setSoundPlayed(true)
-    })
+    beep.play()
     document.removeEventListener('click', musicPlay);
   }
   useEffect(() => {

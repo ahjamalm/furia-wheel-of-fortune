@@ -34,6 +34,13 @@ export const Wheel = ({
     }, START_SPINNING_TIME + CONTINUE_SPINNING_TIME + STOP_SPINNING_TIME - 300);
   };
 
+  const getNextRotation = (startRotationDegrees, finalRotationDegreesCalculated) => {
+
+    while (finalRotationDegreesCalculated < startRotationDegrees) {
+      finalRotationDegreesCalculated = finalRotationDegreesCalculated + 360
+    }
+    return finalRotationDegreesCalculated
+  }
   useEffect(() => {
     if (mustStartSpinning && !isCurrentlySpinning) {
       setIsCurrentlySpinning(true);
@@ -41,7 +48,7 @@ export const Wheel = ({
         prizeNumber,
         10
       );
-      setFinalRotationDegrees(finalRotationDegreesCalculated);
+      setFinalRotationDegrees(getNextRotation(startRotationDegrees, finalRotationDegreesCalculated));
       startSpinning();
 
     }
@@ -53,7 +60,6 @@ export const Wheel = ({
       setStartRotationDegrees(finalRotationDegrees);
     }
   }, [hasStoppedSpinning]);
-
   const getRouletteClass = () => {
     if (hasStartedSpinning) {
       return STARTED_SPINNING;
