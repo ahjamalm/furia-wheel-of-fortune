@@ -123,47 +123,44 @@ export default function App() {
       <div className="background" >
         {/* <iframe src="https://giphy.com/embed/VQ7BcoWeTichjgUBdv" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/isaidyes-shesaidyes-thewhiteflowerbridalboutique-VQ7BcoWeTichjgUBdv">via GIPHY</a></p> */}
       </div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', padding: '16px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '16px', height: '15vh' }}>
         <LongMenu />
-        <div style={{
-          backgroundImage: `url(${Logo})`,
-          backgroundSize: 'cover',
-          width: '15vw',
-          minWidth: '100px',
-          aspectRatio: '2.32',
-        }}
-        />
-
-      </div>
-      <div className="bannar" style={{
-        display: 'flex',
-        justifyContent: 'center',
-        position: "absolute",
-        top: "calc(50% - 33vw)",
-        left: "18%",
-      }}>
         <div style={{
           backgroundImage: `url(${TextLogo})`,
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          backgroundSize: 'cover',
-          width: '65vw',
-          height: '35vh',
+          backgroundSize: 'contain',
+          flex: 3,
+          margin: '0 13vw',
+          aspectRatio: '1',
         }} ></div>
-      </div>
-
-      <div className='wheelContainer'>
-        <Wheel
-          mustStartSpinning={mustSpin}
-          prizeNumber={couponNum}
-          onClick={() => onClick()}
-          onStopSpinning={() => {
-            setSpinning(false);
-            setMustSpin(false);
-            handleOpen();
-          }}
+        <div style={{
+          flex: 1,
+          backgroundImage: `url(${Logo})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: 'contain',
+          aspectRatio: '2.32',
+        }}
         />
       </div>
+
+      <div className="wheelParent">
+        <div className='wheelContainer'>
+          <Wheel
+            mustStartSpinning={mustSpin}
+            prizeNumber={couponNum}
+            onClick={() => onClick()}
+            onStopSpinning={() => {
+              setSpinning(false);
+              setMustSpin(false);
+              handleOpen();
+            }}
+          />
+        </div>
+        <div className="wheelPodium" />
+      </div>
+
+
       <Modal
         keepMounted
         open={open}
@@ -216,9 +213,7 @@ export default function App() {
         </Modal>
       }
 
-
-      <div className="wheelPodium" />
-      <div style={{ position: 'absolute', bottom: '80px', right: '20px', fontSize: '40px', fontWeight: 700, color: '#ed1c23', border: '6px solid #ed1c23', borderRadius: '8px', padding: '8px 40px' }}>{records?.length || 0}</div>
+      <div style={{ position: 'absolute', bottom: '120px', right: '20px', fontSize: '40px', fontWeight: 700, color: '#ed1c23', border: '6px solid #ed1c23', borderRadius: '8px', padding: '8px 40px' }}>{records?.length || 0}</div>
 
     </div>
   );
