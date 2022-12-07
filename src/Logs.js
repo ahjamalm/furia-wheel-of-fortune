@@ -46,8 +46,8 @@ const Logs = () => {
                                     <div style={{ padding: '16px' }}>
                                         <Typography variant='h5'>Summary:</Typography>
 
-                                        <div style={{padding:'4px 0'}}>Total rounds: {rec?.length}</div>
-                                        <div style={{padding:'4px 0'}}>Total redeemed gifts: {rec?.filter(r => ![4, 8].includes(r))?.length}</div>
+                                        <div style={{ padding: '4px 0' }}>Total rounds: {rec?.length}</div>
+                                        <div style={{ padding: '4px 0' }}>Total redeemed gifts: {rec?.filter(r => ![8].includes(r))?.length}</div>
                                         <div style={{ padding: '16px 0' }}>
                                             <BasicTable dateKey={key} />
                                         </div>
@@ -60,7 +60,6 @@ const Logs = () => {
 
                                             {
                                                 rec?.map((item, innerIndex) => {
-                                                    console.log("itemitem",item);
                                                     return <div key={innerIndex}>
                                                         <Typography> {innerIndex + 1}- {mockData[item - 1].name}</Typography>
                                                     </div>

@@ -78,7 +78,7 @@ export const Wheel = ({
         finalRotationDegrees={finalRotationDegrees}
       >
         <img
-          src="assets/roullette.png"
+          src="assets/rollette.png"
           alt="wheel"
           style={{
             position: "relative",

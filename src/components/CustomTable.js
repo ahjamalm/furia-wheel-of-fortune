@@ -20,7 +20,7 @@ export default function BasicTable({ dateKey }) {
   const { records } = useSelector(state => state.log);
   React.useEffect(() => {
     let log = records[dateKey];
-    let data = mockData.filter(r => ![4, 8].includes(r.index))
+    let data = mockData.filter(r => ![8].includes(r.index))
 
     let rows = data.map(r => {
       let redeemed = log.filter(rec => rec === r.index)
@@ -32,7 +32,7 @@ export default function BasicTable({ dateKey }) {
 
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 ,fontFamily:'inherit'}} aria-label="simple table">
+      <Table sx={{ minWidth: 650, fontFamily: 'inherit' }} aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell>Item </TableCell>

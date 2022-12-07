@@ -9,7 +9,7 @@ import TextLogo from "./assets/text.png";
 import PrizeFrame from "./assets/prize_frame.gif";
 import { useDispatch, useSelector } from "react-redux";
 import { SetLogRecord } from "./reducers/logs";
-import { GetNextPrizeIndex, mockData } from "./helpers";
+import { GetNextPrize, GetNextPrizeIndex, mockData } from "./helpers";
 import LongMenu from "./components/menu";
 import moment from "moment-timezone";
 import audioFile from '../src/assets/sound.wav'
@@ -113,6 +113,14 @@ export default function App() {
     beep.play()
     document.removeEventListener('click', musicPlay);
   }
+  // useEffect(() => {
+  //   console.log("recordsrecords", records);
+  //   const newCouponNum = GetNextPrizeIndex(records);
+  //   if (newCouponNum) {
+  //     setCouponNum(newCouponNum);
+  //     dispatch(SetLogRecord(newCouponNum))
+  //   }
+  // }, [records])
   useEffect(() => {
     document.addEventListener('click', musicPlay);
   }, [])
@@ -175,9 +183,9 @@ export default function App() {
           <div className={classes.paper0}>
             <div className={classes.paper}>
               <div className={classes.paper2}>
-                <div style={{ display: 'flex', justifyContent: [4, 8].includes(mockData[couponNum - 1].index) ? 'center' : 'center', alignItems: 'center', width: '65%' }}>
+                <div style={{ display: 'flex', justifyContent: [8].includes(mockData[couponNum - 1].index) ? 'center' : 'center', alignItems: 'center', width: '65%' }}>
                   {
-                    [4, 8].includes(mockData[couponNum - 1].index) ?
+                    [8].includes(mockData[couponNum - 1].index) ?
                       <div />
                       :
                       <div >
