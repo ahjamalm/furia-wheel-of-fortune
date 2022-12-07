@@ -36,7 +36,16 @@ table {
   font-family: "Rb2.1b" !important;
 
 }
-
+.wheelParent {
+  height: 83vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 40px;
+  scale: 0.5;
+}
 .wheelContainer {
   width: 40vw;
   height: 40vw;

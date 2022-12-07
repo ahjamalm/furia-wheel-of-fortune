@@ -38,33 +38,34 @@ table {
 }
 
 .wheelParent {
-  height: 83vh;
+  height: 80vh;
   width: 100%;
   display: flex;
+  position: absolute;
+  bottom: 0;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding-top: 40px;
+  /* background-color: #000; */
 }
 
 .wheelParent .wheelContainer {
-  height: auto;
+  height: 80%;
   position: relative;
   aspect-ratio: 1;
+  bottom: -50px;
 }
 
 .wheelParent .wheelPodium {
   width: 100%;
-  height: 25vw;
+  height: 20%;
   position: relative;
-  bottom: 0;
-  background-position: bottom;
+  /* bottom: 130px; */
+  background-position: top;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   background-image: url('./assets/Podium.png');
   z-index: -10;
-  top: -50px;
-  padding-top: 120px;
   filter: "drop-shadow(-4px 12px 12px #00000040)";
 
 }
