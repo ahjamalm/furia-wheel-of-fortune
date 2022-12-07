@@ -23,7 +23,7 @@ export default function LongMenu() {
     };
 
     return (
-        <div>
+        <div style={{ flex: 1, textAlign: 'left' }}>
             <IconButton
                 aria-label="more"
                 id="long-button"
