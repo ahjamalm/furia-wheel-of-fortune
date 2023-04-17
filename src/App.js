@@ -207,6 +207,7 @@ export default function App() {
                       <div >
                         <img src={mockData[couponNum - 1].img} width={200} height={200} />
                       </div>
+                      
                   }
                   <p className={classes.prize}>{mockData[couponNum - 1].name}</p>
                 </div>
