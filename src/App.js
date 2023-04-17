@@ -4,11 +4,13 @@ import { Wheel } from "./components/Roulette";
 import Grow from "@mui/material/Grow";
 import { makeStyles, Modal } from "@material-ui/core";
 import BGPrize from "./assets/bg_prize.png";
-import Logo from "./assets/Logo5x.png";
-import TextLogo from "./assets/text.png";
+import Logo from "./assets/logo2.png";
+import TextContainer from "./assets/test_2.png";
+
+import TextLogo from "./assets/sako.png";
 import PrizeFrame from "./assets/prize_frame.gif";
 import { useDispatch, useSelector } from "react-redux";
-import { SetLogRecord } from "./reducers/logs";
+import { ResetLog, SetLogRecord } from "./reducers/logs";
 import { GetNextPrize, GetNextPrizeIndex, mockData } from "./helpers";
 import LongMenu from "./components/menu";
 import moment from "moment-timezone";
@@ -122,35 +124,52 @@ export default function App() {
   //   }
   // }, [records])
   useEffect(() => {
+    dispatch(ResetLog())
     document.addEventListener('click', musicPlay);
   }, [])
   return (
     <div ref={ref} className="App">
 
 
-      <div className="background" >
-        {/* <iframe src="https://giphy.com/embed/VQ7BcoWeTichjgUBdv" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/isaidyes-shesaidyes-thewhiteflowerbridalboutique-VQ7BcoWeTichjgUBdv">via GIPHY</a></p> */}
-      </div>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '16px', height: '15vh' }}>
+      <div className="background" />
+      <div >
         <LongMenu />
-        <div style={{
-          backgroundImage: `url(${TextLogo})`,
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: 'contain',
-          flex: 3,
-          margin: '0 13vw',
-          aspectRatio: '1',
-        }} ></div>
+        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', padding: '16px 60px', height: '15vh' }}>
+          <div style={{
+            backgroundImage: `url(${TextLogo})`,
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: 'contain',
+            flex: 1,
+            // margin: '0 13vw',
+            aspectRatio: '2.32',
+            maxWidth: '10%'
+          }} >
+
+          </div>
+          <div style={{
+            flex: 1,
+            backgroundImage: `url(${Logo})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: 'contain',
+            aspectRatio: '2.32',
+            maxWidth: '12%'
+          }}
+          />
+        </div>
+      </div>
+      <div className="textContainer">
         <div style={{
           flex: 1,
-          backgroundImage: `url(${Logo})`,
+          backgroundImage: `url(${TextContainer})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: 'contain',
-          aspectRatio: '2.32',
+          // aspectRatio: '2.32',
+          maxWidth: '90%'
         }}
         />
       </div>
+
 
       <div className="wheelParent">
         <div className='wheelContainer'>
@@ -182,7 +201,7 @@ export default function App() {
               <div className={classes.paper2}>
                 <div style={{ display: 'flex', justifyContent: [8].includes(mockData[couponNum - 1].index) ? 'center' : 'center', alignItems: 'center', width: '65%' }}>
                   {
-                    [8].includes(mockData[couponNum - 1].index) ?
+                    [1, 5, 9].includes(mockData[couponNum - 1].index) ?
                       <div />
                       :
                       <div >
@@ -221,7 +240,7 @@ export default function App() {
         </Modal>
       }
 
-      <div style={{ position: 'absolute', bottom: '120px', right: '20px', fontSize: '40px', fontWeight: 700, color: '#ed1c23', border: '6px solid #ed1c23', borderRadius: '8px', padding: '8px 40px' }}>{records?.length || 0}</div>
+      <div style={{ position: 'absolute', bottom: '20px', right: '20px', fontSize: '40px', fontWeight: 700, color: '#000', border: '6px solid #000', borderRadius: '8px', padding: '8px 40px' }}>{records?.length || 0}</div>
 
     </div>
   );

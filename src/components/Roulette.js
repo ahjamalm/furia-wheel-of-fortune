@@ -46,7 +46,7 @@ export const Wheel = ({
       setIsCurrentlySpinning(true);
       const finalRotationDegreesCalculated = getRotationDegrees(
         prizeNumber,
-        10
+        13
       );
       setFinalRotationDegrees(getNextRotation(startRotationDegrees, finalRotationDegreesCalculated));
       startSpinning();
@@ -69,38 +69,41 @@ export const Wheel = ({
 
   return (
     <>
-      <RotationContainer
-        className={getRouletteClass()}
-        startSpinningTime={START_SPINNING_TIME}
-        continueSpinningTime={CONTINUE_SPINNING_TIME}
-        stopSpinningTime={STOP_SPINNING_TIME}
-        startRotationDegrees={startRotationDegrees}
-        finalRotationDegrees={finalRotationDegrees}
-      >
+      <div onClick={onClick}>
+        <RotationContainer
+          className={getRouletteClass()}
+          startSpinningTime={START_SPINNING_TIME}
+          continueSpinningTime={CONTINUE_SPINNING_TIME}
+          stopSpinningTime={STOP_SPINNING_TIME}
+          startRotationDegrees={startRotationDegrees}
+          finalRotationDegrees={finalRotationDegrees}
+        >
+          <img
+            src="assets/rollette.gif"
+            alt="wheel"
+            style={{
+              position: "relative",
+              width: "100%",
+              height: "100%",
+              margin: "0 auto",
+            }}
+          />
+        </RotationContainer>
         <img
-          src="assets/rollette.png"
-          alt="wheel"
+          src="assets/marker.png"
+          alt="marker"
           style={{
             position: "relative",
-            width: "100%",
-            height: "100%",
-            margin: "0 auto",
+            width: "9%",
+            filter: "drop-shadow(-5px 20px 6px #000000CC)",
+            // left: "5%",
+            top: "-1.5%",
+            zIndex: 2,
           }}
         />
-      </RotationContainer>
-      <img
-        src="assets/marker.png"
-        alt="marker"
-        style={{
-          position: "relative",
-          width: "14%",
-          filter: "drop-shadow(-5px 20px 6px #000000CC)",
-          left: "11%",
-          top: "-13.5%",
-          zIndex: 2,
-        }}
-      />
-      <img
+      </div>
+
+      {/* <img
         src="assets/button.gif"
         alt="button"
         onClick={() => onClick()}
@@ -115,7 +118,7 @@ export const Wheel = ({
           filter: "drop-shadow(-10px 30px 5px #000000CC)",
           zIndex: 3,
         }}
-      />
+      /> */}
     </>
   );
 };

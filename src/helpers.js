@@ -1,138 +1,94 @@
 import moment from "moment-timezone";
 moment.tz.setDefault('Asia/Riyadh');
 
-export const mockDataOld = [
-    {
-        name: "PREMIUM BARBEQUE GLOVE SET",
-        propability: 47,
-        index: 1,
-        img: '/assets/glovs.png'
-    },
-    {
-        name: "CHIMNEY STARTER",
-        propability: 50,
-        index: 2,
-        img: '/assets/starter.png'
-    },
-    {
-        name: "HICKORY WOOD CHUNKS - 0.7KG",
-        propability: 47,
-        index: 3,
-        img: '/assets/wood.png'
-    },
-    {
-        name: "GOOD LUCK NEXT TIME!",
-        propability: 200,
-        index: 4,
-        img: '/assets/goodluck.png'
-    },
-    {
-        name: "LUMPWOOD CHARCOAL - 5KG",
-        propability: 59,
-        index: 5,
-        img: '/assets/Charcoal.png'
-    },
-    {
-        name: "THREE SIDED GRILL BRUSH - 30 CM",
-        propability: 47,
-        index: 6,
-        img: '/assets/brush.png'
-    },
-    {
-        name: "GAS GRILL SPIRIT II E-210 GBS",
-        propability: 1,
-        index: 7,
-        img: '/assets/gas.png'
-    },
-    {
-        name: "GOOD LUCK NEXT TIME!",
-        propability: 200,
-        index: 8,
-        img: '/assets/goodluck.png'
-    },
-    {
-        name: "APRON",
-        propability: 47,
-        index: 9,
-        img: '/assets/apron.png'
-    },
-    {
-        name: "Master-Touch GBS E-5750, Black",
-        propability: 2,
-        index: 10,
-        img: '/assets/master.png'
-    },
-];
-
 
 export const mockData = [
-    {
-        name: "SMOKEY JOE",
-        propability: 1,
-        index: 1,
-        img: '/assets/smoky.png'
-    },
-    {
-        name: "CHIMNEY STARTER",
-        propability: 2,
-        index: 2,
-        img: '/assets/starter.png'
-    },
-    {
-        name: "HICKORY WOOD CHUNKS - 0.7KG",
-        propability: 2,
-        index: 3,
-        img: '/assets/wood.png'
-    },
-    {
-        name: "GO-ANYWHERE",
-        propability: 1,
-        index: 4,
-        img: '/assets/goany.png'
-    },
 
     {
-        name: "THERMOMETER",
-        propability: 2,
-        index: 5,
-        img: '/assets/thermo.png'
-    },
-    {
-        name: "SPONGE",
-        propability: 4,
-        index: 6,
-        img: '/assets/sponge.png'
-    },
-    {
-        name: "GAS GRILL SPIRIT II E-210 GBS",
-        propability: 1,
-        index: 7,
-        img: '/assets/gas.png'
-    },
-    {
         name: "GOOD LUCK NEXT TIME!",
-        propability: 32,
-        index: 8,
+        propability: 2,
+        index: 1,
         img: '/assets/goodluck.png'
     },
     {
-        name: "NATURAL LIGHTER CUBES",
-        propability: 4,
-        index: 9,
-        img: '/assets/cubes.png'
+        name: 'HOSE REEL 25M. 1/2"',
+        propability: 2,
+        index: 2,
+        img: '/assets/hosereel.png'
     },
     {
-        name: "Master-Touch GBS E-5750, Black",
+        name: "HOSE SET",
+        propability: 1,
+        index: 3,
+        img: '/assets/hoseSet.png'
+    },
+
+    {
+        name: "VC4",
+        propability: 2,
+        index: 4,
+        img: '/assets/vc4.png'
+    },
+    {
+        name: "GOOD LUCK NEXT TIME!",
+        propability: 4,
+        index: 5,
+        img: '/assets/goodluck.png'
+    },
+    {
+        name: "VC 3 PLUS",
+        propability: 1,
+        index: 6,
+        img: '/assets/vc3.png'
+    },
+    {
+        name: "KB 5 CORDLESS BROOM",
+        propability: 32,
+        index: 7,
+        img: '/assets/kb5.png'
+    },
+    {
+        name: "SC 1 + EXT HOSE",
+        propability: 4,
+        index: 8,
+        img: '/assets/SC1.png'
+    },
+    {
+        name: "GOOD LUCK NEXT TIME!",
+        propability: 1,
+        index: 9,
+        img: '/assets/goodluck.png'
+    },
+    {
+        name: "WD 2 PLUS",
         propability: 1,
         index: 10,
-        img: '/assets/master.png'
+        img: '/assets/wd2.png'
+    },
+    {
+        name: "K 2 HOME",
+        propability: 1,
+        index: 11,
+        img: '/assets/k2.png'
+    },
+    {
+        name: "K 1 HORIZONTAL",
+        propability: 1,
+        index: 12,
+        img: '/assets/k2Horizontal.png'
+    },
+    {
+        name: "SC 3 UPRIGHT",
+        propability: 1,
+        index: 13,
+        img: '/assets/sc3.png'
     },
 ];
 
 // const Day1 = [4, 5, 2, 6, 4, 1, 4, 9, 4, 4, 5, 2, 1, 4, 4, 4, 3, 6, 5, 4, 2, 4, 2, 4, 3, 1, 2, 3, 4, 4, 4, 6, 5, 6, 4, 9, 4, 2, 4, 4, 1, 10, 5, 4, 4, 3, 1, 2, 5, 4, 9, 4, 6, 4, 4, 5, 2, 3, 4, 4, 4, 9, 1, 9, 4, 6, 4, 5, 4, 4, 3, 1, 3, 4, 4, 4, 5, 9, 4, 4, 1, 4, 2, 4, 4, 4, 4, 9, 6, 3, 4, 1, 4, 6, 4, 4, 5, 3, 6, 4, 4, 4, 1, 2, 9, 4, 3, 4, 6, 4, 4, 5, 4, 9, 1, 6, 4, 3, 4, 5, 4, 4, 6, 1, 9, 4, 4, 4, 2, 4, 3, 4, 9, 4, 5, 4, 4, 1, 2, 3, 4, 4, 4, 5, 4, 6, 4, 6, 4, 2, 4, 4, 1, 9, 4, 4, 4, 4, 5, 9, 3, 4, 1, 4, 5, 4, 4, 2, 3, 4, 4, 4, 4, 9, 5, 3, 4, 6, 4, 4, 4, 4, 1, 9, 4, 4, 4, 4, 5, 2, 3, 4, 1, 4, 5, 4, 4, 4, 4, 2]
 // const Day2 = [4, 5, 2, 6, 4, 1, 4, 9, 4, 4, 5, 2, 1, 4, 7, 4, 3, 6, 5, 4, 2, 4, 2, 4, 4, 1, 2, 3, 4, 4, 4, 6, 5, 6, 4, 9, 4, 2, 4, 4, 1, 10, 5, 4, 4, 4, 1, 2, 5, 4, 9, 4, 6, 4, 4, 5, 2, 3, 4, 5, 4, 9, 1, 9, 4, 6, 4, 5, 4, 4, 3, 4, 3, 4, 4, 4, 5, 9, 6, 4, 4, 4, 2, 4, 4, 6, 4, 9, 6, 3, 4, 1, 4, 6, 4, 4, 5, 3, 6, 4, 4, 4, 1, 2, 9, 4, 3, 4, 6, 4, 4, 5, 4, 9, 1, 6, 4, 3, 4, 5, 4, 4, 6, 1, 9, 4, 4, 4, 2, 4, 3, 4, 9, 4, 5, 4, 4, 1, 2, 3, 4, 4, 4, 5, 4, 6, 4, 6, 4, 2, 4, 4, 1, 9, 4, 4, 4, 4, 5, 9, 3, 4, 1, 4, 5, 4, 4, 2, 3, 4, 4, 4, 4, 9, 5, 3, 4, 6, 4, 4, 4, 4, 1, 9, 4, 4, 4, 4, 5, 2, 3, 4, 1, 4, 5, 4, 4, 4, 4, 2]
 // const Day3 = [4, 5, 2, 6, 4, 1, 4, 9, 4, 4, 5, 2, 1, 4, 4, 4, 3, 6, 5, 4, 2, 9, 2, 9, 4, 1, 2, 3, 4, 4, 4, 6, 5, 6, 2, 9, 2, 2, 4, 4, 1, 4, 5, 4, 4, 4, 1, 2, 5, 4, 9, 4, 6, 4, 4, 5, 2, 3, 4, 5, 4, 9, 1, 9, 4, 6, 4, 5, 4, 4, 3, 4, 3, 4, 4, 4, 5, 9, 4, 4, 4, 4, 2, 4, 4, 4, 4, 9, 6, 3, 4, 1, 4, 6, 4, 4, 5, 3, 6, 4, 4, 4, 1, 2, 9, 4, 3, 4, 6, 4, 4, 5, 4, 9, 1, 6, 4, 3, 4, 5, 4, 4, 6, 1, 9, 4, 4, 4, 2, 4, 3, 4, 9, 4, 5, 4, 4, 1, 2, 3, 4, 4, 4, 5, 4, 6, 4, 6, 4, 2, 4, 4, 1, 9, 4, 4, 4, 4, 5, 9, 3, 4, 1, 4, 5, 4, 4, 2, 3, 4, 4, 4, 4, 9, 5, 3, 4, 6, 4, 4, 4, 4, 1, 9, 4, 4, 4, 4, 5, 2, 3, 4, 1, 4, 5, 4, 4, 4, 4, 2]
-const Day1 = [8, 8, 9, 8, 9, 2, 8, 8, 1, 5, 8, 6, 8, 8, 6, 8, 8, 8, 8, 7, 8, 2, 8, 9, 4, 8, 3, 6, 8, 8, 8, 8, 8, 9, 8, 8, 6, 8, 3, 8, 8, 8, 8, 8, 10, 8, 8, 5, 8, 8]
+const Day1 = [12, 1, 8, 9, 5, 4, 1, 5, 9, 7, 1, 5, 11, 1, 5, 9, 10, 5, 9, 1, 6, 1, 5, 9, 2, 1, 5, 13, 5, 9, 1, 3, 5, 5, 9]
 export const GetNextPrize = (records) => {
     let availableIndex = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].reduce((val, currentVal) => {
         let existed = records?.filter(r => r === currentVal) || []
