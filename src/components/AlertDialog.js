@@ -16,7 +16,7 @@ export default function AlertDialog({ dismiss, confirm }) {
     };
 
     const handleConfirm = () => {
-        if (password === 'ItsMeTheAdmin') {
+        if (password === '1234') {
             confirm()
             dismiss()
         } else {

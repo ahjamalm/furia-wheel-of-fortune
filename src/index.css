@@ -51,7 +51,7 @@ table {
 }
 
 .wheelParent .wheelContainer {
-  height: 80%;
+  height: 70%;
   position: relative;
   aspect-ratio: 1;
   bottom: -50px;

@@ -24,7 +24,7 @@ const Logs = () => {
                 <Button variant='contained' style={{ color: '#fff', background: 'red', fontFamily: 'Rb2.1b' }} onClick={() => {
                     toggleAlert(true)
                 }}>
-                    Delete logs
+                    Reset
                 </Button>
             </div>
 
