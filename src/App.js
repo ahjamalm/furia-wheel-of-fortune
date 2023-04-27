@@ -134,7 +134,7 @@ export default function App() {
       <div className="background" />
       <div >
         <LongMenu />
-        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', padding: '16px 60px', height: '15vh' }}>
+        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', padding: '16px 16px', height: '15vh' }}>
           <div style={{
             backgroundImage: `url(${TextLogo})`,
             backgroundPosition: "center",
@@ -143,7 +143,7 @@ export default function App() {
             flex: 1,
             // margin: '0 13vw',
             aspectRatio: '2.32',
-            maxWidth: '10%'
+            maxWidth: '15%'
           }} >
 
           </div>
@@ -153,7 +153,7 @@ export default function App() {
             backgroundRepeat: "no-repeat",
             backgroundSize: 'contain',
             aspectRatio: '2.32',
-            maxWidth: '12%'
+            maxWidth: '20%'
           }}
           />
         </div>
